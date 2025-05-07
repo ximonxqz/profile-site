@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bio Website of Zeemoncomback">
+    <title>Sharksaw เองนะจ่ะシ</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #111;
+            cursor: pointer;
+        }
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .profile-container {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            color: rgb(250, 215, 255);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .profile-container img {
+            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            margin-bottom: 20px;
+        }
+        .profile-container h1 {
+            font-size: 32px;
+            margin: 0;
+            font-weight: bold;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            display: inline-block;
+            animation: shake 2s infinite;
+        }
+        .profile-container h1 span {
+            display: inline-block;
+            opacity: 0;
+            animation: shake 1s forwards;
+        }
+        .profile-container h1 span:nth-child(1) { animation-delay: 0s; }
+        .profile-container h1 span:nth-child(2) { animation-delay: 0.2s; }
+        .profile-container h1 span:nth-child(3) { animation-delay: 0.4s; }
+        .profile-container h1 span:nth-child(4) { animation-delay: 0.6s; }
+        .profile-container h1 span:nth-child(5) { animation-delay: 0.8s; }
+
+        @keyframes shake {
+            0%, 100% { opacity: 1; transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .social-btns {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: transparent;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .btn img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+        .btn:hover img {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <video class="background-video" autoplay muted loop>
+        <source src="yae-mikos-sakura-dreamscape.3840x2160.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="profile-container">
+        <img src="https://media.discordapp.net/attachments/1219847067342602281/1369637170163486791/IMG_1161.png?ex=681c9583&is=681b4403&hm=aded13be58f6d98bf50d9bd50dd2e5da80fbf36b51a34324886989845f0b3c60&=&format=webp&quality=lossless&width=643&height=968" alt="Profile Picture">
+        
+        <h1>
+            <span>〖X</span><span>i</span><span>m</span><span>o</span><span>n〗</span>
+        </h1>
+
+        <div class="social-btns">
+            <a href="https://www.instagram.com/sxshark_.saw/" class="btn" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram Icon">
+            </a>
+            <!-- YouTube Icon: replace href with your channel link -->
+            <a href="https://www.youtube.com/@sharksaw_ch" class="btn" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="YouTube Icon">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100064801885048" class="btn" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Icon">
+            </a>
+        </div>
+    </div>
+
+    <!-- Hidden audio player -->
+    <audio id="background-music" preload="auto">
+        <source src="ພິການຕາຍັງມີໃຈ(พิการตายังมีใจ) - STS73【Official Music Video】-yt.savetube.me.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <script>
+        // Play music when user clicks anywhere on the page
+        document.body.addEventListener('click', function() {
+            var audio = document.getElementById('background-music');
+            audio.play();
+        });
+    </script>
+</body>
+</html>
