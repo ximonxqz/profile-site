@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="th">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ximon | Profile</title>
-  <style>
+
+<!-- saved from url=(0195)https://ximonxqz.github.io/profile-site/?fbclid=IwY2xjawMAPCNleHRuA2FlbQIxMABicmlkETFSZlFlSXlLUDBFN1JJMWhoAR5guQTrUigwOcd784DKLAeqEoGpJzD8lygDUmZegkoy9NJ9YGLgsaT6fOnLPw_aem_hhDfl0wZb_eylUMZEn5GfA -->
+<html lang="th"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ximon | Profile</title>
+<style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -89,42 +89,77 @@
       height: 28px;
     }
   </style>
-</head>
+<style>
+  .volume-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 999;
+  }
+
+  .volume-controls button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #ff00dd;
+    transition: transform 0.2s, background 0.3s;
+  }
+
+  .volume-controls button:hover {
+    transform: scale(1.2);
+    background: rgba(255, 0, 255, 0.7);
+  }
+</style></head>
 <body>
-
-  <video class="bg-video" autoplay muted loop>
-    <source src="yae-mikos-sakura-dreamscape.3840x2160.mp4" type="video/mp4" />
-  </video>
-
-  <div class="glow-container" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2">
-    <img class="avatar" src="IMG_1161.png" alt="Profile" />
-    <h1>〘 Ximon 〙</h1>
-    <p>I love YASMIN the most in 3 worlds.</p>
-    <div class="socials">
-      <a href="https://www.instagram.com/sxshark_.saw/" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="IG" />
-      </a>
-      <a href="https://www.youtube.com/@sharksaw_ch" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="YT" />
-      </a>
-      <a href="https://www.facebook.com/profile.php?id=100064801885048" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="FB" />
-      </a>
-    </div>
-  </div>
-
-  <!-- Music on click -->
-  <audio id="bg-music" preload="auto">
-    <source src="SARAN - MY MOON feat SIMON Official Visualizer.mp3" type="audio/mp3" />
-  </audio>
-  <script>
+<video autoplay="" class="bg-video" loop="" muted="">
+<source src="yae-mikos-sakura-dreamscape.3840x2160.mp4" type="video/mp4"/>
+</video>
+<div class="glow-container" data-tilt="" data-tilt-glare="true" data-tilt-max="15" data-tilt-max-glare="0.2" data-tilt-speed="400" style="transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1); will-change: transform;">
+<img alt="Profile" class="avatar" src="./Ximon _ Profile_files/IMG_1161.png"/>
+<h1>〘 Ximon 〙</h1>
+<p>นักสร้างเซิร์ฟ • Minecraft • สายจริงจังที่เต็มไปด้วยไฟในตัว</p>
+<div class="socials">
+<a href="https://www.instagram.com/sxshark_.saw/" target="_blank">
+<img alt="IG" src="./Ximon _ Profile_files/Instagram_logo_2022.svg"/>
+</a>
+<a href="https://www.youtube.com/@sharksaw_ch" target="_blank">
+<img alt="YT" src="./Ximon _ Profile_files/YouTube_full-color_icon_(2017).svg"/>
+</a>
+<a href="https://www.facebook.com/profile.php?id=100064801885048" target="_blank">
+<img alt="FB" src="./Ximon _ Profile_files/Facebook_f_logo_(2019).svg"/>
+</a>
+</div>
+<div class="js-tilt-glare" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none;"><div class="js-tilt-glare-inner" style="position: absolute; top: 50%; left: 50%; pointer-events: none; background-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 100%); transform: rotate(180deg) translate(-50%, -50%); transform-origin: 0% 0%; opacity: 0; width: 900px; height: 900px;"></div></div></div>
+<!-- Music on click -->
+<audio id="bg-music" preload="auto">
+<source src="SARAN - MY MOON feat SIMON Official Visualizer.mp3" type="audio/mp3"/>
+</audio>
+<script>
     document.body.addEventListener('click', () => {
       const audio = document.getElementById('bg-music');
       audio.play();
     });
   </script>
+<!-- Vanilla Tilt (จาก CDN) -->
+<script src="./Ximon _ Profile_files/vanilla-tilt.min.js.download"></script>
 
-  <!-- Vanilla Tilt (จาก CDN) -->
-  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
-</body>
-</html>
+<div class="volume-controls">
+<button onclick="changeVolume(-0.1)">🔉</button>
+<button onclick="changeVolume(0.1)">🔊</button>
+</div>
+<script>
+  function changeVolume(value) {
+    const audio = document.getElementById('bg-music');
+    let newVolume = audio.volume + value;
+    if (newVolume > 1) newVolume = 1;
+    if (newVolume < 0) newVolume = 0;
+    audio.volume = newVolume;
+  }
+</script></body></html>
