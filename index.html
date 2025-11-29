@@ -128,6 +128,17 @@
       transform: scale(1.2);
       background: rgba(255, 0, 255, 0.7);
     }
+    /* เพิ่มเอฟเฟกต์ 3D ตอน hover */
+    .glow-container:hover {
+      transform: perspective(900px) rotateX(8deg) rotateY(-8deg) scale(1.03);
+      transition: transform 0.4s ease;
+    }
+
+    /* เพิ่มพื้นหลังใสแบบมีมิติ */
+    .glow-container {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
 </style>
 </head>
 <body>
@@ -171,11 +182,37 @@
     let newVolume = audio.volume + value;
     audio.volume = Math.min(1, Math.max(0, newVolume));
   }
+  function changeVolume(value) {
+    const audio = document.getElementById('bg-music');
+    let newVolume = audio.volume + value;
+    audio.volume = Math.min(1, Math.max(0, newVolume));
+  }
+
+  /* ปุ่มเปลี่ยนเพลง */
+  let currentSong = 0;
+  const songs = [
+    "SARAN - MY MOON feat SIMON Official Visualizer.mp3",
+    "song2.mp3",
+    "song3.mp3"
+  ];
+
+  function nextSong() {
+    const audio = document.getElementById('bg-music');
+    currentSong = (currentSong + 1) % songs.length;
+    audio.src = songs[currentSong];
+    audio.play();
+  }
 </script>
 
 <div class="volume-controls">
   <button onclick="changeVolume(-0.1)">🔉</button>
   <button onclick="changeVolume(0.1)">🔊</button>
+</div>
+
+<div class="volume-controls">
+  <button onclick="changeVolume(-0.1)">🔉</button>
+  <button onclick="changeVolume(0.1)">🔊</button>
+  <button onclick="nextSong()">⏭️</button>
 </div>
 
 </body>
