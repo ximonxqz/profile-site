@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-
-<!-- saved from url=(0195)https://ximonxqz.github.io/profile-site/?fbclid=IwY2xjawMAPCNleHRuA2FlbQIxMABicmlkETFSZlFlSXlLUDBFN1JJMWhoAR5guQTrUigwOcd784DKLAeqEoGpJzD8lygDUmZegkoy9NJ9YGLgsaT6fOnLPw_aem_hhDfl0wZb_eylUMZEn5GfA -->
-<html lang="th"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<html lang="th">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Ximon | Profile</title>
 <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -15,6 +15,12 @@
       justify-content: center;
       align-items: center;
       color: #fff;
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     .bg-video {
@@ -52,6 +58,14 @@
       color: #ffb3f7;
       text-shadow: 0 0 15px #ff00c8;
       margin-bottom: 10px;
+      opacity: 0;
+      animation: slideIn 1.2s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     p {
@@ -67,7 +81,6 @@
     }
 
     .socials a {
-      display: inline-block;
       width: 50px;
       height: 50px;
       border-radius: 50%;
@@ -88,78 +101,82 @@
       width: 28px;
       height: 28px;
     }
-  </style>
-<style>
-  .volume-controls {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-    z-index: 999;
-  }
 
-  .volume-controls button {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: none;
-    background: rgba(0,0,0,0.6);
-    color: #fff;
-    font-size: 18px;
-    cursor: pointer;
-    box-shadow: 0 0 10px #ff00dd;
-    transition: transform 0.2s, background 0.3s;
-  }
+    .volume-controls {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+      z-index: 999;
+    }
 
-  .volume-controls button:hover {
-    transform: scale(1.2);
-    background: rgba(255, 0, 255, 0.7);
-  }
-</style></head>
+    .volume-controls button {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #ff00dd;
+      transition: transform 0.2s, background 0.3s;
+    }
+
+    .volume-controls button:hover {
+      transform: scale(1.2);
+      background: rgba(255, 0, 255, 0.7);
+    }
+</style>
+</head>
 <body>
-<video autoplay="" class="bg-video" loop="" muted="">
-<source src="yae-mikos-sakura-dreamscape.3840x2160.mp4" type="video/mp4"/>
-</video>
-<div class="glow-container" data-tilt="" data-tilt-glare="true" data-tilt-max="15" data-tilt-max-glare="0.2" data-tilt-speed="400" style="transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1); will-change: transform;">
-<img alt="Profile" class="avatar" src="IMG_1161.png"/>
-<h1>〘 Ximon 〙</h1>
-<p>เพราะเธอคือที่หนึ่งในใจผมเสมอ 𓆩♡𓆪YASMIN𓆩♡𓆪</p>
-<div class="socials">
-<a href="https://www.instagram.com/sxshark_.saw/" target="_blank">
-<img alt="IG" src="Instagram_logo_2022.svg"/>
-</a>
-<a href="https://www.youtube.com/@sharksaw_ch" target="_blank">
-<img alt="YT" src="YouTube_full-color_icon_(2017).svg"/>
-</a>
-<a href="https://www.facebook.com/profile.php?id=100064801885048" target="_blank">
-<img alt="FB" src="Facebook_f_logo_(2019).svg"/>
-</a>
-</div>
-<div class="js-tilt-glare" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none;"><div class="js-tilt-glare-inner" style="position: absolute; top: 50%; left: 50%; pointer-events: none; background-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 100%); transform: rotate(180deg) translate(-50%, -50%); transform-origin: 0% 0%; opacity: 0; width: 900px; height: 900px;"></div></div></div>
-<!-- Music on click -->
-<audio id="bg-music" preload="auto">
-<source src="SARAN - MY MOON feat SIMON Official Visualizer.mp3" type="audio/mp3"/>
-</audio>
-<script>
-    document.body.addEventListener('click', () => {
-      const audio = document.getElementById('bg-music');
-      audio.play();
-    });
-  </script>
-<!-- Vanilla Tilt (จาก CDN) -->
-<script src="./Ximon _ Profile_files/vanilla-tilt.min.js.download"></script>
 
-<div class="volume-controls">
-<button onclick="changeVolume(-0.1)">🔉</button>
-<button onclick="changeVolume(0.1)">🔊</button>
+<video autoplay loop muted class="bg-video">
+  <source src="yae-mikos-sakura-dreamscape.3840x2160.mp4" type="video/mp4" />
+</video>
+
+<div class="glow-container">
+  <img src="IMG_1161.png" class="avatar" alt="Profile" />
+  <h1>〘 Ximon 〙</h1>
+  <p>เพราะเธอคือที่หนึ่งในใจผมเสมอ 𓆩♡𓆪YASMIN𓆩♡𓆪</p>
+
+  <div class="socials">
+    <a href="https://www.instagram.com/sxshark_.saw/" target="_blank">
+      <img src="Instagram_logo_2022.svg" alt="IG" />
+    </a>
+
+    <a href="https://www.youtube.com/@sharksaw_ch" target="_blank">
+      <img src="YouTube_full-color_icon_(2017).svg" alt="YT" />
+    </a>
+
+    <a href="https://www.facebook.com/profile.php?id=100064801885048" target="_blank">
+      <img src="Facebook_f_logo_(2019).svg" alt="FB" />
+    </a>
+  </div>
 </div>
+
+<audio id="bg-music" preload="auto">
+  <source src="SARAN - MY MOON feat SIMON Official Visualizer.mp3" type="audio/mp3" />
+</audio>
+
 <script>
+  document.body.addEventListener('click', () => {
+    const audio = document.getElementById('bg-music');
+    audio.play();
+  });
+
   function changeVolume(value) {
     const audio = document.getElementById('bg-music');
     let newVolume = audio.volume + value;
-    if (newVolume > 1) newVolume = 1;
-    if (newVolume < 0) newVolume = 0;
-    audio.volume = newVolume;
+    audio.volume = Math.min(1, Math.max(0, newVolume));
   }
-</script></body></html>
+</script>
+
+<div class="volume-controls">
+  <button onclick="changeVolume(-0.1)">🔉</button>
+  <button onclick="changeVolume(0.1)">🔊</button>
+</div>
+
+</body>
+</html>
