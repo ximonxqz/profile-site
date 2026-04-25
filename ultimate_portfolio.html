@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ultimate Portfolio</title>
+</head>
+
+<body style="margin:0; font-family:Arial; color:white; overflow-x:hidden;">
+
+<!-- 🎬 video background -->
+<video autoplay muted loop style="position:fixed; width:100%; height:100%; object-fit:cover; z-index:-2;">
+    <source src="tech.mp4">
+</video>
+
+<!-- overlay -->
+<div style="position:fixed; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:-1;"></div>
+
+<!-- SECTION 1 -->
+<section style="height:100vh; display:flex; justify-content:center; align-items:center; text-align:center;">
+    <div>
+        <h1 class="hidden" style="font-size:60px;">ซอลีฮีน หลีกาเส็ม</h1>
+        <p class="hidden delay1" style="font-size:20px;">Future Developer</p>
+    </div>
+</section>
+
+<!-- SECTION 2 -->
+<section style="height:100vh; display:flex;">
+    <div style="width:50%; padding:60px;">
+        <h2 class="hidden">My Skills</h2>
+
+        <p class="hidden delay1">HTML</p>
+        <div class="bar hidden delay2">
+            <div class="fill" data-skill="80"></div>
+        </div>
+
+        <p class="hidden delay1">Python</p>
+        <div class="bar hidden delay2">
+            <div class="fill" data-skill="70"></div>
+        </div>
+    </div>
+
+    <div style="width:50%; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+        <img src="me.jfif" width="180" height="180" class="hidden delay1 profile">
+        <h2 class="hidden delay2">About Me</h2>
+    </div>
+</section>
+
+<!-- SECTION 3 -->
+<section style="height:100vh; text-align:center;">
+    <h1 class="hidden">Projects</h1>
+
+    <div class="card hidden delay1">
+        <h3>Mini Website</h3>
+        <p>HTML Portfolio</p>
+    </div>
+
+    <div class="card hidden delay2">
+        <h3>Python App</h3>
+        <p>Basic Program</p>
+    </div>
+</section>
+
+<style>
+.hidden {
+    opacity:0;
+    transform:translateY(100px) scale(0.9);
+    transition: all 1s cubic-bezier(0.25,1,0.5,1);
+}
+
+.show {
+    opacity:1;
+    transform:translateY(0) scale(1);
+}
+
+.delay1 { transition-delay:0.3s; }
+.delay2 { transition-delay:0.6s; }
+
+.card {
+    margin:20px auto;
+    padding:30px;
+    width:250px;
+    border-radius:20px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    transition:0.3s;
+}
+
+.card:hover {
+    transform:scale(1.05);
+}
+
+.bar {
+    background:#1e293b;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.fill {
+    height:10px;
+    background:#38bdf8;
+    border-radius:10px;
+    width:0;
+    transition: width 2s cubic-bezier(0.25,1.5,0.5,1);
+}
+
+.profile {
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid #38bdf8;
+    transition:0.3s;
+}
+
+.profile:hover {
+    transform:scale(1.1);
+}
+</style>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+
+            const fills = entry.target.querySelectorAll(".fill");
+            fills.forEach(fill => {
+                let percent = fill.getAttribute("data-skill");
+                fill.style.width = percent + "%";
+            });
+        }
+    });
+});
+
+document.querySelectorAll(".hidden, .bar").forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
